@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<style>
+			*{ margin: 0; padding: 0;}
+			.div{
+				width: 100%;
+			}
+			.div>div{
+				width: 80px;
+				height: 100px;
+				background: pink;
+				display: inline-block;
+			}
+			.div>div:nth-child(1){
+				float: left;
+			}
+			.div>div:nth-child(2){
+				
+				position: relative;
+				left: 50%;
+				transform: translateX(-120px);
+			}
+			.div>div:nth-child(3){
+				float: right;
+			}
+		</style>
+		<div class="div">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</body>
+</html>
+<script>
+</script>

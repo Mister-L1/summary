@@ -1,0 +1,37 @@
+	
+必需。规定产生动画效果的 CSS 样式和值。
+可能的 CSS 样式值（提供实例）：
+backgroundPosition
+borderWidth
+borderBottomWidth
+borderLeftWidth
+borderRightWidth
+borderTopWidth
+borderSpacing
+margin
+marginBottom
+marginLeft
+marginRight
+marginTop
+outlineWidth
+padding
+paddingBottom
+paddingLeft
+paddingRight
+paddingTop
+height
+width
+maxHeight
+maxWidth
+minHeight
+minWidth
+font
+fontSize
+bottom
+left
+right
+top
+letterSpacing
+wordSpacing
+lineHeight
+textIndent

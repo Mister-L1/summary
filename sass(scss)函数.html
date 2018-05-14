@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>		
+	</head>
+	<body>
+		<!--创建函数-->
+		@mixin titleBackground($x,$y,$width:72px,$height:18px) {
+		  width: $width;
+		  height: $height;
+		  background-position:$x $y ;
+		}
+		<!--引入函数-->
+        @include titleBackground(0,0,0,0);
+        <!--引入class-->
+        @extend .zuitang_title_bg;
+        
+	</body>
+</html>

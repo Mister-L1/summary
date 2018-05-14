@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.x1 {
+				display: table-cell;
+				vertical-align: middle;
+				padding: 50px 0;
+				height: 100%;
+				border: 1px solid #333;
+			}
+			/*低版本 IE fix bug：
+			.x1 {
+				display: inline-block;
+			}*/
+			.x2 {
+				width: 100px;
+				height: 100px;
+				background: #f00;
+				margin-bottom: 2px;				
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="x1">			
+			<div class="x2"></div>
+			<div class="x2"></div>
+			<div class="x2"></div>			
+		</div>
+	</body>
+
+</html>
