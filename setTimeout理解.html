@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>setTimeout理解</title>
+	</head>
+	<body>
+		作用：<p>setTimeout()方法用于在指定的毫秒数后调用函数或计算表达式。</p>
+		区别：<p>setInterval()与setTimeout()相同，区别在于后者是重复性的检测和执行</p>
+
+	</body>
+</html>
+<script>
+	for (var i=0;i<5;i++) {
+		(function (i) {
+			console.log(i)
+			setTimeout(function () {
+				console.log(i)
+			},i*1000)
+		})(i)
+	}
+</script>
