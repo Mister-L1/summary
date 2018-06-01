@@ -5,8 +5,11 @@
 		<title></title>
 	</head>
 	<body>
+
 		创建本地并转到分支:git checkout -b dev <br>
 		创建远程分支：先创建本地分支->提交到远程git push origin dev<br>
-		查看分支：git branch -a  (*号代表你现在所在的分支;remotes/origin/远程分支); git branch 本地分支 ；git branch -r 远程分支；
+		查看分支：git branch -a  (*号代表你现在所在的分支;remotes/origin/远程分支); git branch 本地分支 ；git branch -r 远程分支；<br>
+		合并分支：1.切换到要需要合并的分支master->git checkout master;2.合并->git merge dev(团队协作需要先拉取->git pull);
+		刪除分支:删除本地分支->git branch -d dev;删除远程分支->git push origin --delete dev或者git push origin :dev
 	</body>
 </html>
