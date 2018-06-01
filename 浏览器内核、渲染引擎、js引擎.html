@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/default.css" />
+		<style>
+			body{padding: 10px;}
+		</style>
+	</head>
+
+	<body>
+		<h3>浏览器内核可以分成两部分：</h3>
+		<p>渲染引擎(layout engineer或者RenderingEngine)和JS引擎。现在JS引擎比较独立，内核更加倾向于说渲染引擎。</p>
+		<hr />
+		<h3>1.渲染引擎的功能作用</h3>
+		<p>渲染引擎，负责对网页语法的解释（如HTML、JavaScript）并渲染网页。所以，通常所谓的浏览器内核也就是浏览器所采用的渲染引擎，渲染引擎决定了浏览器如何显示网页的内容以及页面的格式信息。不同的浏览器内核对网页编写语法的解释也有不同，因此同一网页在不同的内核的浏览器里的渲染（显示）效果也可能不同</p>
+		<h4>主流浏览器内核：</h4> 1.Trident内核：代表作品是IE，因IE捆绑在Windows中，所以占有极高的份额，又称为IE内核或MSHTML，此内核只能用于Windows平台，且不是开源的。
+		<br> 代表作品还有腾讯、Maxthon（遨游）、360浏览器等。但由于市场份额比较大，曾经出现脱离了W3C标准的时候，同时IE版本比较多，存在很多的兼容性问题。(2015年微软推出自己新的浏览器，原名叫斯巴达，后改名edge,使用edge引擎)
+		<br /> 2.Gecko内核：代表作品是Firefox，即火狐浏览器。因火狐是最多的用户，故常被称为firefox内核它是开源的，最大优势是跨平台，在Microsoft Windows、Linux、MacOs X等主 要操作系统中使用。<br>Mozilla是网景公司在第一次浏览器大战败给微软之后创建的。有兴趣的同学可以了解一下浏览器大战<br> 3.Webkit内核：代表作品是Safari、曾经的Chrome，是开源的项目
+		<br /> 4.Presto内核：代表作品是Opera，Presto是由Opera Software开发的浏览器排版引擎，它是世界公认最快的渲染速度的引擎。在13年之后，Opera宣布加入谷歌阵营，弃用了Presto<br /> 5.Blink内核：由Google和Opera Software开发的浏览器排版引擎，2013年4月发布。现在Chrome内核是Blink。谷歌还开发了自己的JS引擎，V8，使JS运行速度极大地提高了
+		<hr>
+		<h3>2.JS引擎功能作用</h3>
+		<p>读取网页中的JavaScript代码，对其处理后运行,JavaScript最初由网景公司的Brendan Eich设计，是一种动态、弱类型、基于原型的语言，内置支持类。以它为基础，制定了ECMAScript标准。javascript在浏览器的实现中还必须含有<a href="#">DOM</a>和<a href="#">BOM</a>。Web浏览器一般使用公共 API来创建主机对象来负责将DOM对象反射进JavaScript。JS引擎负责对JavaScript进行解释、编译和执行，以使网页达到一些动态的效果。主要的网页浏览器JavaScript引擎：</p>
+		1） Mozilla<br> · Rhino，由Mozilla基金会管理，开放源代码，完全以Java编写。<br> · SpiderMonkey，第一款JavaScript引擎，由BrendanEich在NetscapeCommunications时编写，用于Mozilla Firefox1.0～3.0版本。<br> · TraceMonkey，基于实时编译的引擎，其中部份代码取自Tamarin引擎，用于 Mozilla Firefox 3.5～3.6版本。<br> · JägerMonkey，（JägerMonkey，也有人拼写成JagerMonkey）德文Jäger原意为猎人，结合追踪和组合码技术大幅提高效能，部分技术借凿了V8、JavaScriptCore、WebKit，用于Mozilla Firefox 4.0以上版本。<br> 2）Google
+		<br> · V8，开放源代码，由Google丹麦开发，是Google Chrome的一部分。<br> 3）微软
+		<br> · Chakra，中文译名为查克拉，用于Internet Explorer 9。<br> · JScript 是由微软公司开发的活动脚本语言，是微软对ECMAScript规范的实现.IE 3.0-IE8.0使用的JS引擎<br> 4）其它
+		<br> o KJS，KDE的ECMAScript/JavaScript引擎，最初由Harri Porten开发，用于KDE项目的 Konqueror网页浏览器中。<br> o Narcissus，开放源代码，由BrendanEich编写（他也参与编写了第一个SpiderMonkey）。<br> o Tamarin，由AdobeLabs编写，Flash Player 9所使用的引擎。<br> o Nitro（原名SquirrelFish），为Safari 4编写。<br> o Carakan，由Opera软件公司编写，自Opera10.50版本开始使用。 <br>
+		<hr>
+		<h3><a href="EventLoop.html">javascript的执行机制</a></h3>
+	</body>
+</html>
