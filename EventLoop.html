@@ -9,7 +9,7 @@
 			body {
 				padding: 10px 20px;
 			}
-			
+				
 			
 			.red {
 				color: red;
@@ -55,6 +55,7 @@
 		<h3>4.setTimeout</h3> 一般说，n秒后会执行setTimeout这个函数，但是这个说法不严谨
 		<br />
 		<h4>准确的来说应该是？</h4> n秒后，setTimeout里的函数被会推入event queue，而event queue(事件队列)里的任务，只有在主线程空闲时才会执行,<br> 所以只有满足 (1)n秒后 (2)主线程空闲，同时满足时，才会n秒后执行该函数<br> 如果主线程执行内容很多，执行时间超过n秒，比如执行了10秒，那么这个函数只能10秒后执行了。
+		<hr>
 		<h3><a href="setTimeout理解.html">深入理解setTimeout</a></h3>
 	</body>
 
