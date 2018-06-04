@@ -6,13 +6,16 @@
 		<title></title>
 		<link rel="stylesheet" href="css/default.css" />
 		<style>
-			body{
-				padding:  10px;
+			body {
+				padding: 10px;
 			}
+			
 			p {
+				line-height: 25px;
 				text-indent: 2rem;
 			}
-			span{
+			
+			span {
 				display: block;
 				text-indent: 3rem;
 			}
@@ -20,27 +23,57 @@
 	</head>
 
 	<body>
-		<h4>创建git文件夹:</h4>
-		<p>git init</p>
-		<h4>创建本地并转到分支:</h4>
-		<p>git checkout -b dev </p>
-		<h4>创建远程分支：</h4>
-		<p>先创建本地分支 git checkout -b dev</p>
-		<p>提交到远程git push origin dev</p>
-		<h4>查看分支：</h4>
-		<p>git branch -a (*号代表你现在所在的分支;remotes/origin/远程分支)</p>
-		<p> git branch 本地分支 </p>
-		<p> git branch -r 远程分支；</p>
-		<h4>合并分支：</h4>
-		<p>切换到要需要合并的分支master->git checkout master</p>
-		<p>合并->git merge dev(团队协作需要先拉取->git pull);</p>
-		<h4>刪除分支:</h4>
-		<p>删除本地分支->git branch -d dev</p>
-		<p>删除远程分支->git push origin --delete dev或者git push origin :dev</p>
+		<h3>Git常用操作命令</h3>	
+		<h4>远程仓库相关命令</h4>
+		<p>检出仓库：git clone https://github.com/Mister-L1/summary.git</p>
+		<p>查看远程仓库：git remote -v</p>
+		<p>添加远程仓库： git remote add [name] [url]</p>
+		<p>删除远程仓库： git remote rm [name]</p>
+		<p>修改远程仓库： git remote set-url --push[name][newUrl]</p>
+		<p>拉取远程仓库： git pull [remoteName] [localBranchName]</p>
+		<p>推送远程仓库： git push [remoteName] [localBranchName]</p>
+
+		<h4>分支操作</h4>
+		<p>查看本地分支： git branch </p>
+		<p>查看远程分支： git branch -r </p>
+		<p>查看所有分支：git branch -a (*号代表你现在所在的分支;remotes/origin/远程分支)</p>
+		<p>创建本地分支：git branch [name] (新分支创建后不会自动切换为当前分支)</p>
+		<p>切换分支： git checkout [name] </p>
+		<p>创建分支并转到新分支:git checkout -b [name] </p>
+		<p>创建远程分支(先创建本地分支push到远程)： git push origin [name]</p>
+		<p>合并分支 ： <span>切换到要需要合并的master分支：git checkout master</span><span>将master与dev合并：git merge dev(团队协作需要先拉取在合并：git pull)</span></p>
+		<p>删除本地分支：git branch -d [name] (-d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。如果想强制删除一个分支，可以使用-D选项)</p>
+		<p>删除远程分支：git push origin --delete [name]或者git push origin :[name]</p>
+		
+		<h4>版本(tag)操作</h4>
+		<p>查看版本： git tag</p>
+		<p>创建版本： git tag [v1.0]</p>
+		<p>删除版本： git tag -d [v1.0]</p>
+		<p>查看远程版本： git tag -r</p>
+		<p>创建远程版本(本地版本push到远程)： git push origin [v1.0] (push所有tag，命令格式为：git push [origin] --tags)</p>
+		<p>删除远程版本： git push origin :[v1.0]</p>
+		
+		<h4>子模块(submodule)操作</h4>
+		<p>添加子模块： git submodule add [url] [path] (如： git submodule add git://github.com/soberh/ui-libs.git src/main/webapp/ui-libs)</p>
+		<p>初始化子模块： git submodule init ----只在首次检出仓库时运行一次就行</p>
+		<p>更新子模块： git submodule update ----每次更新或切换分支后都需要运行一下</p>
+		<p>删除子模块:</p>
+		<span> git rm --cached [path]</span>
+		<span>编辑“.gitmodules”文件，将子模块的相关配置节点删除掉</span>
+		<span>编辑“.git/config”文件，将子模块的相关配置节点删除掉</span>
+		<span>手动删除子模块残留的目录</span>
 		<hr>
-		<h4>关于每次提交输入账户密码问题:</h4>
-		原因是在添加远程库的时候使用了https的方式。。所以每次都要用https的方式push到远程库<br>
-		解决:<br>
+		<h3>git操作-删除文件</h3>
+		<h4>git删除文件</h4>
+		<p>rm add2.txt</p>
+		<p>git rm add2.txt</p>
+		<p>git commit -m "rm test"</p>
+		<p>git push</p>
+		
+		<hr />
+		<h3>关于每次提交输入账户密码问题:</h3> 原因是在添加远程库的时候使用了https的方式。。所以每次都要用https的方式push到远程库
+		<br> 解决:
+		<br>
 		<p>1.查看使用的传输协议 </p>
 		<span>git remote -v</span>
 		<p>2.重新设置成ssh的方式:</p>
@@ -48,6 +81,6 @@
 		<span>git remote add origin git@github.com:Mister-L1/summary.git 添加新的git方式的origin </span>
 		<span>git remote -v 再次查看协议</span>
 		<span>git push origin  再次push一下，已经不需要输入用户名密码了 </span>
-	</body> 
+	</body>
 
 </html>
