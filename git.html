@@ -23,7 +23,16 @@
 	</head>
 
 	<body>
-		<h3>Git常用操作命令</h3>	
+		<h3>Git常用操作命令</h3>
+		<h4>初始化、提交</h4>
+		<p>初始化一个Git仓库：git init</p>
+		<p>查看仓库的状态：git status</p>
+		<p>添加到暂存区：git add .(所有修改)</p>
+		<p>暂存区提交到仓库：git commit -m "info"(info:有意义的注释信息)</p>
+		<p>查看文件修改还未提交的部分： git diff</p>
+		<p>查看commit信息： git log (退出方法：英文状态下按q)</p>
+		<p>查看旧的版本的commit id：git reflog</p>
+		<p>退回到指定的版本:git reset --hard [commit id]</p>
 		<h4>远程仓库相关命令</h4>
 		<p>检出仓库：git clone https://github.com/Mister-L1/summary.git</p>
 		<p>查看远程仓库：git remote -v</p>
@@ -44,7 +53,7 @@
 		<p>合并分支 ： <span>切换到要需要合并的master分支：git checkout master</span><span>将master与dev合并：git merge dev(团队协作需要先拉取在合并：git pull)</span></p>
 		<p>删除本地分支：git branch -d [name] (-d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。如果想强制删除一个分支，可以使用-D选项)</p>
 		<p>删除远程分支：git push origin --delete [name]或者git push origin :[name]</p>
-		
+
 		<h4>版本(tag)操作</h4>
 		<p>查看版本： git tag</p>
 		<p>创建版本： git tag [v1.0]</p>
@@ -52,7 +61,7 @@
 		<p>查看远程版本： git tag -r</p>
 		<p>创建远程版本(本地版本push到远程)： git push origin [v1.0] (push所有tag，命令格式为：git push [origin] --tags)</p>
 		<p>删除远程版本： git push origin :[v1.0]</p>
-		
+
 		<h4>子模块(submodule)操作</h4>
 		<p>添加子模块： git submodule add [url] [path] (如： git submodule add git://github.com/soberh/ui-libs.git src/main/webapp/ui-libs)</p>
 		<p>初始化子模块： git submodule init ----只在首次检出仓库时运行一次就行</p>
@@ -69,11 +78,10 @@
 		<p>git rm add2.txt</p>
 		<p>git commit -m "rm test"</p>
 		<p>git push</p>
-		
+
 		<hr />
 		<h3>关于每次提交输入账户密码问题:</h3> 原因是在添加远程库的时候使用了https的方式。。所以每次都要用https的方式push到远程库
-		<br> 解决:
-		<br>
+		<h4>解决:</h4>
 		<p>1.查看使用的传输协议 </p>
 		<span>git remote -v</span>
 		<p>2.重新设置成ssh的方式:</p>
@@ -81,6 +89,19 @@
 		<span>git remote add origin git@github.com:Mister-L1/summary.git 添加新的git方式的origin </span>
 		<span>git remote -v 再次查看协议</span>
 		<span>git push origin  再次push一下，已经不需要输入用户名密码了 </span>
-	</body>
+		<hr>
+		<h3>Git与Svn比较</h3>
+		<h4>Git</h4>
+		<p>优点：</p>
+		<span>个人开发：速度快、灵活，一个很大的优势就是可以不用联网；团队开发：团队中Git的地位类似与集中式版本控制系统，管理方便，逻辑明确，很容易的解决冲突,相对独立不影响协同开发;</span>
+		<p>缺点：</p>
+		<span>服务器压力太大，数据库容量暴增;不能连接到服务器上，基本上不可以工作;不适合开发人数多</span>
+		<h4>Svn</h4>
+		<p>优点：</p>
+		<span>管理方便，逻辑明确，符合一般人思维习惯;易于管理，集中式服务器更能保证安全性;代码一致性非常高;适合开发人数不多的项目开发</span>
+		<p>缺点：</p>
+		<span>学习周期相对而言比较长。不符合常规思维;、代码保密性差，一旦开发者把整个库克隆下来就可以完全公开所有代码和版本信息。但现在Github上面有私人仓库的功能，如果强调安全性保密性的话，花点钱还是可以实现安全需求的。</span>
+		<hr>
+		<h3><a href="svn.html">svn</a></h3>
 
 </html>
