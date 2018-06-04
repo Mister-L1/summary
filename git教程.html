@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/default.css" />
+		<style>
+			body{
+				padding:  10px;
+			}
+			p {
+				text-indent: 2rem;
+			}
+			span{
+				display: block;
+				text-indent: 3rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h4>创建git文件夹:</h4>
+		<p>git init</p>
+		<h4>创建本地并转到分支:</h4>
+		<p>git checkout -b dev </p>
+		<h4>创建远程分支：</h4>
+		<p>先创建本地分支 git checkout -b dev</p>
+		<p>提交到远程git push origin dev</p>
+		<h4>查看分支：</h4>
+		<p>git branch -a (*号代表你现在所在的分支;remotes/origin/远程分支)</p>
+		<p> git branch 本地分支 </p>
+		<p> git branch -r 远程分支；</p>
+		<h4>合并分支：</h4>
+		<p>切换到要需要合并的分支master->git checkout master</p>
+		<p>合并->git merge dev(团队协作需要先拉取->git pull);</p>
+		<h4>刪除分支:</h4>
+		<p>删除本地分支->git branch -d dev</p>
+		<p>删除远程分支->git push origin --delete dev或者git push origin :dev</p>
+		<hr>
+		<h4>关于每次提交输入账户密码问题:</h4>
+		原因是在添加远程库的时候使用了https的方式。。所以每次都要用https的方式push到远程库<br>
+		解决:<br>
+		<p>1.查看使用的传输协议 </p>
+		<span>git remote -v</span>
+		<p>2.重新设置成ssh的方式:</p>
+		<span>git remote rm origin 移出旧的http的origin</span>
+		<span>git remote add origin git@github.com:Mister-L1/summary.git 添加新的git方式的origin </span>
+		<span>git remote -v 再次查看协议</span>
+		<span>git push origin  再次push一下，已经不需要输入用户名密码了 </span>
+	</body> 
+
+</html>
