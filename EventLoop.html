@@ -28,7 +28,7 @@
 		<p>是通过的事件循环(event loop)，理解了event loop机制，就理解了JS的执行机制。</p>
 		<hr>
 
-		<h3>2.JS中的event loop(1)</h3> 例1,观察它的执行顺序
+		<h3>2.JS中的event loop(1)</h3> 例1（console.log）,观察它的执行顺序
 		<br> 运行结果是：1 3 2<br> 也就是说，setTimeout里的函数并没有立即执行，而是延迟了一段时间，满足一定条件后才去执行的，这类代码，我们叫异步代码。
 		<br />
 		<h4>按照这种分类方式:JS的执行机制是：</h4> 1.首先判断JS是同步还是异步，同步就进入主进程，异步就进入event table<br> 2.异步任务在event table中注册函数，当满足触发条件后，被推入event queue <br>3.同步任务进入主线程后一直执行，直到主线程空闲时，才会去event queue中查看是否有可执行的异步任务，如果有就推入主进程中
@@ -37,7 +37,7 @@
 		<p>当 1、 3在控制条被打印后，主线程去event queue(事件队列)里查看是否有可执行的函数，执行setTimeout里的函数。</p>
 		<hr>
 
-		<h3>3.JS中的event loop(2)</h3> 例2：根据例子1机制我们分析<br> ·setTimeout 是异步任务，被放到event table
+		<h3>3.JS中的event loop(2)</h3> 例2（console.log）：根据例子1机制我们分析<br> ·setTimeout 是异步任务，被放到event table
 		<br> ·new Promise 是同步任务，被放到主进程里，直接执行打印 console.log('马上执行for循环啦')
 		<br> ·.then 里的函数是异步任务，被放到event table<br> ·console.log('代码执行结束') 是同步代码，被放到主进程里，直接执行<br> 所以，结果是：马上执行for循环啦---代码执行结束---定时器开始啦---执行then函数啦吗?
 		<br>而实际上执行顺序是：马上执行for循环啦---代码执行结束---执行then函数啦---定时器开始啦<br>
