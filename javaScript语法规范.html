@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<h3>默认参数精简代码</h3>
+
+	<body>
+	</body>
+
+</html>
+<script>
+	/*默认参数精简代码*/
+	//反例
+	function writeForumComment(subject, body) {
+		subject = subject || 'No Subject';
+		body = body || 'No text';
+	}
+	//正例
+	function writeForumComment(subject = 'No subject', body = 'No text') {
+		console.log(subject, body)
+	}
+	writeForumComment('a', '')
+</script>
