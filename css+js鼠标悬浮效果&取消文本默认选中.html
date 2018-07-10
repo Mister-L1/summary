@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/default.css" />
+	</head>
+	<style>
+		.button {
+			position: absolute;
+			top: 0;
+			left: 0;
+			appearance: none;
+			background: #f72359;
+			border: none;
+			color: white;
+			cursor: pointer;
+			outline: none;
+			overflow: hidden;
+			border-radius: 8px;
+			text-align: center;
+			font-size: 20px;
+			width: 400px;
+			height: 60px;
+			line-height: 60px;
+			/*阴影
+			box-shadow: h-shadow v-shadow blur spread color inset;
+			h-shadow	必需。水平阴影的位置。允许负值。
+			v-shadow	必需。垂直阴影的位置。允许负值。
+			blur	可选。模糊距离。	测试
+			spread	可选。阴影的尺寸。	测试
+			color	可选。阴影的颜色。请参阅 CSS 颜色值。	
+			inset	可选。将外部阴影 (outset) 改为内部阴影。*/
+			box-shadow: 0px 5px 15px 2px #999;
+			/*取消文本默认选中*/
+			-moz-user-select: none;
+			/*火狐*/
+			-webkit-user-select: none;
+			/*webkit浏览器*/
+			-ms-user-select: none;
+			/*IE10*/
+			-khtml-user-select: none;
+			/*早期浏览器*/
+			user-select: none;
+		}
+		
+		.button:hover {
+			--size: 400px;
+		}
+	</style>
+
+	<body>
+
+		<div class="button" onselectstart="return false">onmousemove</div>
+
+	</body>
+
+</html>
+<script>
+	document.querySelector('.box').onmousemove = (e) => {
+		e.cancelBubble = true;
+		const x = e.pageX - e.target.offsetLeft
+		const y = e.pageY - e.target.offsetTop
+		e.target.style.setProperty('--x', `${ x }px`)
+		e.target.style.setProperty('--y', `${ y }px`)
+
+		console.log((200 - x), (30 - y))
+	}
+	//onselectstart="return false"  -->js取消默认文本选中
+</script>
