@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/default.css" />
+		<style>
+			.box {
+				position: relative;
+				margin: 100px auto;
+				width: 0;
+				height: 0;
+				border-left: 100px solid transparent;
+				border-right: 100px solid transparent;
+				border-bottom: 120px solid rgba(0, 0, 0, .5);
+				transition: 1s;
+				cursor: default;
+
+			}
+			.box>span{
+				position: absolute;
+				left: -35px;
+				line-height: 140px;
+				width: 100px;
+			}
+			.button {
+				display: block;
+				margin: 0 auto;
+				outline: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box" oncontextmenu="oncontextmenu"><span>点击滚轮</span></div>
+		<button class="button" oncontextmenu="oncontextmenu">左键点击 || 右键点击</button>
+	</body>
+
+</html>
+<script>
+	var btn = document.querySelector('.button')
+	var box = document.querySelector('.box')
+	var oncontextmenu=function (e) {
+		var ev = e || event
+		ev.preventDefault(); //清除默认事件
+	}
+
+	btn.onmousedown = function(e) {
+		var ev = e || event
+
+		if(ev.button == 2) {
+			box.style.transform = 'translateX(250px)'
+		}
+		if(ev.button == 0) {
+			box.style.transform = 'translateX(-250px)'
+		}
+	}
+	box.onmousedown = function(e) {
+		var ev = e || event
+
+		if(ev.button == 1) {
+			box.style.transform = 'translateX(0px)'
+		}
+
+	}
+</script>
