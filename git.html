@@ -46,10 +46,13 @@
 		<p>查看本地分支： git branch </p>
 		<p>查看远程分支： git branch -r </p>
 		<p>查看所有分支：git branch -a (*号代表你现在所在的分支;remotes/origin/远程分支)</p>
+		<p>查看当前详细分支信息（可看到当前分支与对应的远程追踪分支）：git branch -vv</p>
+		<p>查看当前远程仓库信息：git remote -vv</p>
 		<p>创建本地分支：git branch [name] (新分支创建后不会自动切换为当前分支)</p>
 		<p>切换分支： git checkout [name] </p>
 		<p>创建分支并转到新分支:git checkout -b [name] </p>
 		<p>创建远程分支(先创建本地分支push到远程)： git push origin [name]</p>
+		<p>本地关联远程分支： git branch --set-upstream-to=origin/[远程分支名称] [本地关联分支名称]；老版本：git branch --set-upstream [本地关联分支名称] origin/[远程分支名称]</p>
 		<p>合并分支 ： <span>切换到要需要合并的master分支：git checkout master</span><span>将master与dev合并：git merge dev(团队协作需要先拉取在合并：git pull)</span></p>
 		<p>删除本地分支：git branch -d [name] (-d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。如果想强制删除一个分支，可以使用-D选项)</p>
 		<p>删除远程分支：git push origin --delete [name]或者git push origin :[name]</p>
