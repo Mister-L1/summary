@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.name {
+				position: absolute;
+				top: 48%;
+				left: 48%;
+				margin: auto;
+				font-size: 40px;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="name">666</div>
+		<button class="start">开始</button>
+		<button class="end">结束</button>
+	</body>
+
+</html>
+<script>
+	let names = [1, 2, 3, 4, 5, 6, 7, 8, 9],
+		name = document.querySelector('.name'),
+		start = document.querySelector('.start'),
+		end = document.querySelector('.end'),
+		timer = null
+
+	start.onclick = function() {
+		clearInterval(timer)
+		timer = setInterval(() => {
+			name.innerHTML = names[parseInt(Math.random() * names.length)]
+		}, 10)
+	}
+	end.onclick = function() {
+		clearInterval(timer)
+	}
+</script>

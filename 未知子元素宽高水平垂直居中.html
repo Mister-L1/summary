@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<style>
+			body,
+			html {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				box-sizing: border-box;
+			}
+			
+			.x1 {
+				position: fixed;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				background: rgba(0, 0, 0, .5);
+				text-align: center;
+			}
+			
+			.x1:after {
+				content: " ";
+				display: inline-block;
+				height: 100%;
+				width: 0px;
+
+				vertical-align: middle;
+			}
+			
+			.x2 {
+				display: inline-block;
+				border: 1px solid blueviolet;
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="x1">
+			<div class="x2">垂直居中</div>
+		</div>
+	</body>
+
+</html>
