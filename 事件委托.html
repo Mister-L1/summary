@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		div{
+			margin-bottom: 30px;
+		}
+		li {
+			width: 100px;
+		}
+	</style>
+
+	<body>
+		<div>什么是事件委托：<br>它还有一个名字叫事件代理，JavaScript高级程序设计上讲：事件委托就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。</div>
+		<div>事件委托的好处：<br>事件委托技术可以避免对每个字元素添加事件监听器，减少操作DOM节点的次数，从而减少浏览器的重绘和重排，提高代码的性能。<br>使用事件委托，只有父元素与DOM存在交互，其他的操作都是在JS虚拟内存中完成的，这样就大大提高了性能。</div>
+		<div>什么时候用事件委托：<br>当子元素有很多，需要对子元素的时间进行监听的时候</div>
+
+		<ul>
+			<li>测试1</li>
+			<li>测试2</li>
+			<li>测试3</li>
+			<li>测试4</li>
+			<li>测试5</li>
+			<li>测试6</li>
+			<li>测试7</li>
+			<li>测试8</li>
+		</ul>
+
+	</body>
+
+</html>
+<script>
+	let oUl = document.getElementsByTagName("ul")[0]
+	let aLi = document.querySelectorAll('li')
+	oUl.addEventListener('mouseover', function(ev) {
+		//Event对象提供了一个属性叫target，可以返回事件的目标节点，我们成为事件源
+		//target就可以表示为当前的事件操作的dom，但不是真正操作dom，
+		//这个是有兼容性的，标准浏览器用ev.target，IE浏览器用event.srcElement
+		var ev = ev || window.event;　　　　
+		var target = ev.target || ev.srcElement;
+		console.log(ev)
+		if(target.nodeName.toLowerCase() == 'li') {
+			target.style.background = 'red'
+		}
+	})
+
+	oUl.addEventListener('mouseout', function(ev) {
+		var ev = ev || window.event;　　　　
+		var target = ev.target || ev.srcElement;
+		console.log(ev)
+		if(target.nodeName.toLowerCase() == 'li') {
+			target.style.background = ''
+		}
+	})
+</script>

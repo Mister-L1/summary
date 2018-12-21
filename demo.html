@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<h3>您抽中的奖品是：<span id="prize" style="color:red ;"></span></h3>
+		<button id="button">随机抽奖</button> 您还有：<span id="num" style="color: red;"></span>次机会
+	</body>
+
+</html>
+<script>
+	var list = ["iphoneX", "三星NOTE8", "小米MIX2S", "宝马I8", "话费100元", "谢谢参与"];
+	var num = document.getElementById('num')
+	var prize = document.getElementById('prize')
+	var button = document.getElementById('button')
+	var isClick = false
+
+	prize.innerHTML = '请开始抽奖!'
+	num.innerHTML = 3
+
+	button.onclick = function() {
+		//在抽取中时不执行
+		if(isClick) {
+			return 
+		}
+		isClick = true
+		//如果次数用光，不执行以后代码
+		if(num.innerHTML == 0) {
+			alert('您的抽奖次数已用光，明天再来吧！')
+			isClick = false
+			return
+		}
+		var random = null
+		//随机抽选的效果
+		var timer = setInterval(function() {
+			random = Math.floor(Math.random() * list.length);
+			prize.innerHTML = list[random]
+		}, 0)
+		//3秒后效果
+		setTimeout(function() {
+			clearInterval(timer)
+			num.innerHTML--
+			prize.innerHTML = list[random]
+			list.splice(random, 1)
+			isClick = false
+		}, 3000)
+	}
+</script>
